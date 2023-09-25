@@ -1,0 +1,905 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "en" ],
+    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "http://www.w3.org/2002/07/owl", "http://www.w3.org/2000/01/rdf-schema", "http://ontologies/interactioncontext", "http://www.w3.org/2001/XMLSchema" ],
+    "iri" : "http://ontologies/interactioncontext"
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "12",
+    "type" : "owl:Class"
+  }, {
+    "id" : "13",
+    "type" : "owl:Class"
+  }, {
+    "id" : "14",
+    "type" : "owl:Class"
+  }, {
+    "id" : "9",
+    "type" : "owl:Class"
+  }, {
+    "id" : "1",
+    "type" : "owl:Class"
+  }, {
+    "id" : "24",
+    "type" : "owl:Class"
+  }, {
+    "id" : "2",
+    "type" : "owl:Class"
+  }, {
+    "id" : "36",
+    "type" : "owl:Class"
+  }, {
+    "id" : "31",
+    "type" : "owl:Class"
+  }, {
+    "id" : "46",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "47",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "49",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "6",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "50",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "44",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "51",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "53",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "54",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "38",
+    "type" : "owl:Class"
+  }, {
+    "id" : "26",
+    "type" : "owl:Class"
+  }, {
+    "id" : "22",
+    "type" : "owl:Class"
+  }, {
+    "id" : "55",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "16",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "17",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "56",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "7",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "42",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "59",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "60",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "10",
+    "type" : "owl:Class"
+  }, {
+    "id" : "65",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "67",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "33",
+    "type" : "owl:Class"
+  }, {
+    "id" : "21",
+    "type" : "owl:Class"
+  }, {
+    "id" : "28",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "http://ontologies/interactioncontext#Sensor",
+    "baseIri" : "http://ontologies/interactioncontext",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Sensor"
+    },
+    "comment" : {
+      "en" : "Description: A class representing sensors or sensor devices used to collect data within the interaction context."
+    },
+    "id" : "12"
+  }, {
+    "iri" : "http://ontologies/interactioncontext#Rule",
+    "baseIri" : "http://ontologies/interactioncontext",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Rule"
+    },
+    "id" : "13",
+    "superClasses" : [ "14" ]
+  }, {
+    "iri" : "http://ontologies/interactioncontext#Information",
+    "baseIri" : "http://ontologies/interactioncontext",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Information"
+    },
+    "subClasses" : [ "13", "28" ],
+    "comment" : {
+      "en" : "A class representing general information entities. Subclasses might include measures, rules, and other information-related concepts."
+    },
+    "id" : "14"
+  }, {
+    "iri" : "http://ontologies/interactioncontext#Product",
+    "baseIri" : "http://ontologies/interactioncontext",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Product"
+    },
+    "comment" : {
+      "en" : "A class representing products or objects that may be associated with sensors, services, or user interactions."
+    },
+    "id" : "9"
+  }, {
+    "iri" : "http://ontologies/interactioncontext#Subservice",
+    "baseIri" : "http://ontologies/interactioncontext",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Subservice"
+    },
+    "comment" : {
+      "en" : "A subclass of Service that represents subcomponents or subfunctionalities of larger services, allowing for hierarchical service modeling."
+    },
+    "id" : "1",
+    "superClasses" : [ "10" ]
+  }, {
+    "iri" : "http://ontologies/interactioncontext#Time",
+    "baseIri" : "http://ontologies/interactioncontext",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Time"
+    },
+    "id" : "24",
+    "superClasses" : [ "22" ]
+  }, {
+    "iri" : "http://ontologies/interactioncontext#User",
+    "baseIri" : "http://ontologies/interactioncontext",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "User"
+    },
+    "comment" : {
+      "en" : "User"
+    },
+    "id" : "2"
+  }, {
+    "iri" : "http://ontologies/interactioncontext#Rating",
+    "baseIri" : "http://ontologies/interactioncontext",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Rating"
+    },
+    "comment" : {
+      "en" : "A class representing ratings or evaluations provided by users or other entities to interactions, products, or services."
+    },
+    "id" : "36"
+  }, {
+    "iri" : "http://ontologies/interactioncontext#Identity",
+    "baseIri" : "http://ontologies/interactioncontext",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Identity"
+    },
+    "id" : "31",
+    "superClasses" : [ "22" ]
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "46",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "47",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "49",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "6",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "50",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "44",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "51",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#double",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "53",
+    "label" : {
+      "IRI-based" : "double"
+    }
+  }, {
+    "instances" : 0,
+    "union" : [ "21", "33" ],
+    "attributes" : [ "union", "anonymous" ],
+    "id" : "54"
+  }, {
+    "iri" : "http://ontologies/interactioncontext#Environment",
+    "baseIri" : "http://ontologies/interactioncontext",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Environment"
+    },
+    "id" : "38",
+    "superClasses" : [ "22" ]
+  }, {
+    "iri" : "http://ontologies/interactioncontext#Device",
+    "baseIri" : "http://ontologies/interactioncontext",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Device"
+    },
+    "id" : "26",
+    "superClasses" : [ "22" ]
+  }, {
+    "iri" : "http://ontologies/interactioncontext#Context",
+    "baseIri" : "http://ontologies/interactioncontext",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Context"
+    },
+    "subClasses" : [ "26", "38", "31", "24" ],
+    "comment" : {
+      "en" : "The top-level class representing a contextual element, which can include devices, environments, identities, and time."
+    },
+    "id" : "22"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "55",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "instances" : 0,
+    "union" : [ "21", "33" ],
+    "attributes" : [ "union", "anonymous" ],
+    "id" : "16"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "17",
+    "label" : {
+      "IRI-based" : "dateTime"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#int",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "56",
+    "label" : {
+      "IRI-based" : "int"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "7",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "42",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "instances" : 0,
+    "union" : [ "21", "33" ],
+    "attributes" : [ "union", "anonymous" ],
+    "id" : "59"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "60",
+    "label" : {
+      "IRI-based" : "dateTime"
+    }
+  }, {
+    "iri" : "http://ontologies/interactioncontext#Service",
+    "baseIri" : "http://ontologies/interactioncontext",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Service"
+    },
+    "subClasses" : [ "1" ],
+    "comment" : {
+      "en" : "A class representing services or functionalities provided by products or devices within."
+    },
+    "id" : "10"
+  }, {
+    "instances" : 0,
+    "union" : [ "1", "10" ],
+    "attributes" : [ "union", "anonymous" ],
+    "id" : "65"
+  }, {
+    "instances" : 0,
+    "union" : [ "1", "10" ],
+    "attributes" : [ "union", "anonymous" ],
+    "id" : "67"
+  }, {
+    "iri" : "http://ontologies/interactioncontext#Interaction",
+    "baseIri" : "http://ontologies/interactioncontext",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Interaction"
+    },
+    "comment" : {
+      "en" : "A class representing interactions between various entities in the context, capturing the dynamics of user-device, device-device, or user-environment interactions."
+    },
+    "id" : "33"
+  }, {
+    "iri" : "http://ontologies/interactioncontext#InteractionSequence",
+    "baseIri" : "http://ontologies/interactioncontext",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "InteractionSequence"
+    },
+    "comment" : {
+      "en" : "A class representing a sequence or series of interactions"
+    },
+    "id" : "21"
+  }, {
+    "iri" : "http://ontologies/interactioncontext#Measure",
+    "baseIri" : "http://ontologies/interactioncontext",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Measure"
+    },
+    "id" : "28",
+    "superClasses" : [ "14" ]
+  } ],
+  "property" : [ {
+    "id" : "0",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "5",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "8",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "15",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "4",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "19",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "20",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "23",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "25",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "27",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "29",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "30",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "32",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "35",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "37",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "39",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "41",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "43",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "34",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "45",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "48",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "52",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "57",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "58",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "61",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "62",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "63",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "64",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "3",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "40",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "68",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "18",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "69",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "70",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "11",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "71",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "72",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "73",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "66",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "74",
+    "type" : "owl:objectProperty"
+  } ],
+  "propertyAttribute" : [ {
+    "iri" : "http://ontologies/interactioncontext#is_used_by",
+    "inverse" : "3",
+    "baseIri" : "http://ontologies/interactioncontext",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "is_used_by"
+    },
+    "superproperty" : [ "4" ],
+    "domain" : "1",
+    "attributes" : [ "object" ],
+    "id" : "0"
+  }, {
+    "iri" : "http://ontologies/interactioncontext#name",
+    "baseIri" : "http://ontologies/interactioncontext",
+    "range" : "7",
+    "label" : {
+      "IRI-based" : "name"
+    },
+    "domain" : "6",
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "5"
+  }, {
+    "iri" : "http://ontologies/interactioncontext#has_services",
+    "inverse" : "11",
+    "baseIri" : "http://ontologies/interactioncontext",
+    "range" : "10",
+    "label" : {
+      "IRI-based" : "has_services"
+    },
+    "domain" : "9",
+    "attributes" : [ "object", "inverse functional" ],
+    "id" : "8"
+  }, {
+    "iri" : "http://ontologies/interactioncontext#endDate",
+    "baseIri" : "http://ontologies/interactioncontext",
+    "range" : "17",
+    "label" : {
+      "IRI-based" : "endDate"
+    },
+    "domain" : "16",
+    "attributes" : [ "datatype" ],
+    "id" : "15"
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#topObjectProperty",
+    "baseIri" : "http://www.w3.org/2002/07/owl",
+    "range" : "6",
+    "label" : {
+      "IRI-based" : "topObjectProperty"
+    },
+    "domain" : "6",
+    "subproperty" : [ "18", "0" ],
+    "attributes" : [ "object", "external" ],
+    "id" : "4"
+  }, {
+    "range" : "10",
+    "domain" : "1",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "19"
+  }, {
+    "iri" : "http://ontologies/interactioncontext#occurs_in",
+    "baseIri" : "http://ontologies/interactioncontext",
+    "range" : "22",
+    "label" : {
+      "IRI-based" : "occurs_in"
+    },
+    "domain" : "21",
+    "attributes" : [ "object", "inverse functional" ],
+    "id" : "20"
+  }, {
+    "range" : "22",
+    "domain" : "24",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "23"
+  }, {
+    "range" : "22",
+    "domain" : "26",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "25"
+  }, {
+    "range" : "14",
+    "domain" : "28",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "27"
+  }, {
+    "iri" : "http://ontologies/interactioncontext#detects",
+    "baseIri" : "http://ontologies/interactioncontext",
+    "range" : "28",
+    "label" : {
+      "IRI-based" : "detects"
+    },
+    "domain" : "12",
+    "attributes" : [ "object" ],
+    "id" : "29"
+  }, {
+    "range" : "22",
+    "domain" : "31",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "30"
+  }, {
+    "iri" : "http://ontologies/interactioncontext#belongs_to",
+    "inverse" : "34",
+    "baseIri" : "http://ontologies/interactioncontext",
+    "range" : "21",
+    "label" : {
+      "IRI-based" : "belongs_to"
+    },
+    "domain" : "33",
+    "attributes" : [ "object", "functional" ],
+    "id" : "32"
+  }, {
+    "iri" : "http://ontologies/interactioncontext#is_for_a",
+    "baseIri" : "http://ontologies/interactioncontext",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "is_for_a"
+    },
+    "domain" : "36",
+    "attributes" : [ "object", "functional" ],
+    "id" : "35"
+  }, {
+    "range" : "22",
+    "domain" : "38",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "37"
+  }, {
+    "iri" : "http://ontologies/interactioncontext#has_subservices",
+    "inverse" : "40",
+    "baseIri" : "http://ontologies/interactioncontext",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "has_subservices"
+    },
+    "domain" : "10",
+    "attributes" : [ "object" ],
+    "id" : "39"
+  }, {
+    "iri" : "http://ontologies/interactioncontext#order",
+    "baseIri" : "http://ontologies/interactioncontext",
+    "range" : "42",
+    "label" : {
+      "IRI-based" : "order"
+    },
+    "domain" : "33",
+    "attributes" : [ "datatype" ],
+    "id" : "41"
+  }, {
+    "iri" : "http://ontologies/interactioncontext#value",
+    "baseIri" : "http://ontologies/interactioncontext",
+    "range" : "44",
+    "label" : {
+      "IRI-based" : "value"
+    },
+    "domain" : "6",
+    "attributes" : [ "datatype" ],
+    "id" : "43"
+  }, {
+    "iri" : "http://ontologies/interactioncontext#has_interactions",
+    "baseIri" : "http://ontologies/interactioncontext",
+    "range" : "33",
+    "label" : {
+      "IRI-based" : "has_interactions"
+    },
+    "domain" : "21",
+    "attributes" : [ "object", "inverse functional" ],
+    "id" : "34"
+  }, {
+    "iri" : "http://ontologies/interactioncontext#is_executed_with",
+    "baseIri" : "http://ontologies/interactioncontext",
+    "range" : "21",
+    "label" : {
+      "IRI-based" : "is_executed_with"
+    },
+    "domain" : "1",
+    "attributes" : [ "object", "inverse functional" ],
+    "id" : "45"
+  }, {
+    "range" : "14",
+    "domain" : "13",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "48"
+  }, {
+    "iri" : "http://ontologies/interactioncontext#is_role_of",
+    "baseIri" : "http://ontologies/interactioncontext",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "is_role_of"
+    },
+    "domain" : "46",
+    "attributes" : [ "object" ],
+    "id" : "52"
+  }, {
+    "iri" : "http://ontologies/interactioncontext#id",
+    "baseIri" : "http://ontologies/interactioncontext",
+    "range" : "56",
+    "label" : {
+      "IRI-based" : "id"
+    },
+    "domain" : "6",
+    "attributes" : [ "datatype" ],
+    "id" : "57"
+  }, {
+    "iri" : "http://ontologies/interactioncontext#startDate",
+    "baseIri" : "http://ontologies/interactioncontext",
+    "range" : "60",
+    "label" : {
+      "IRI-based" : "startDate"
+    },
+    "domain" : "59",
+    "attributes" : [ "datatype" ],
+    "id" : "58"
+  }, {
+    "iri" : "http://ontologies/interactioncontext#valueInteraction",
+    "baseIri" : "http://ontologies/interactioncontext",
+    "range" : "53",
+    "label" : {
+      "IRI-based" : "valueInteraction"
+    },
+    "domain" : "54",
+    "attributes" : [ "datatype" ],
+    "id" : "61"
+  }, {
+    "iri" : "http://ontologies/interactioncontext#tag",
+    "baseIri" : "http://ontologies/interactioncontext",
+    "range" : "51",
+    "label" : {
+      "IRI-based" : "tag"
+    },
+    "domain" : "6",
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "62"
+  }, {
+    "iri" : "http://ontologies/interactioncontext#valueRating",
+    "baseIri" : "http://ontologies/interactioncontext",
+    "range" : "49",
+    "label" : {
+      "IRI-based" : "valueRating"
+    },
+    "domain" : "6",
+    "attributes" : [ "datatype" ],
+    "id" : "63"
+  }, {
+    "iri" : "http://ontologies/interactioncontext#has_tags",
+    "inverse" : "66",
+    "baseIri" : "http://ontologies/interactioncontext",
+    "range" : "47",
+    "label" : {
+      "IRI-based" : "has_tags"
+    },
+    "domain" : "65",
+    "attributes" : [ "object", "transitive" ],
+    "id" : "64"
+  }, {
+    "iri" : "http://ontologies/interactioncontext#uses",
+    "baseIri" : "http://ontologies/interactioncontext",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "uses"
+    },
+    "domain" : "2",
+    "attributes" : [ "object", "asymmetric", "inverse functional" ],
+    "id" : "3"
+  }, {
+    "iri" : "http://ontologies/interactioncontext#is_subservice_of",
+    "baseIri" : "http://ontologies/interactioncontext",
+    "range" : "10",
+    "label" : {
+      "IRI-based" : "is_subservice_of"
+    },
+    "domain" : "1",
+    "attributes" : [ "object", "functional" ],
+    "id" : "40"
+  }, {
+    "iri" : "http://ontologies/interactioncontext#is_made_by",
+    "inverse" : "69",
+    "baseIri" : "http://ontologies/interactioncontext",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "is_made_by"
+    },
+    "domain" : "21",
+    "attributes" : [ "object", "functional" ],
+    "id" : "68"
+  }, {
+    "iri" : "http://ontologies/interactioncontext#has_role",
+    "inverse" : "52",
+    "baseIri" : "http://ontologies/interactioncontext",
+    "range" : "46",
+    "label" : {
+      "IRI-based" : "has_role"
+    },
+    "superproperty" : [ "4" ],
+    "domain" : "2",
+    "attributes" : [ "object", "functional" ],
+    "id" : "18"
+  }, {
+    "iri" : "http://ontologies/interactioncontext#makes",
+    "baseIri" : "http://ontologies/interactioncontext",
+    "range" : "21",
+    "label" : {
+      "IRI-based" : "makes"
+    },
+    "domain" : "2",
+    "attributes" : [ "object", "inverse functional" ],
+    "id" : "69"
+  }, {
+    "iri" : "http://ontologies/interactioncontext#element",
+    "baseIri" : "http://ontologies/interactioncontext",
+    "range" : "55",
+    "label" : {
+      "IRI-based" : "element"
+    },
+    "domain" : "33",
+    "attributes" : [ "datatype" ],
+    "id" : "70"
+  }, {
+    "iri" : "http://ontologies/interactioncontext#is_service_of",
+    "baseIri" : "http://ontologies/interactioncontext",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "is_service_of"
+    },
+    "domain" : "10",
+    "attributes" : [ "object", "functional" ],
+    "id" : "11"
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#topDataProperty",
+    "baseIri" : "http://www.w3.org/2002/07/owl",
+    "range" : "50",
+    "label" : {
+      "IRI-based" : "topDataProperty"
+    },
+    "domain" : "6",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "71"
+  }, {
+    "iri" : "http://ontologies/interactioncontext#executes",
+    "inverse" : "45",
+    "baseIri" : "http://ontologies/interactioncontext",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "executes"
+    },
+    "domain" : "21",
+    "attributes" : [ "object", "functional", "asymmetric" ],
+    "id" : "72"
+  }, {
+    "iri" : "http://ontologies/interactioncontext#is_from_a",
+    "baseIri" : "http://ontologies/interactioncontext",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "is_from_a"
+    },
+    "domain" : "36",
+    "attributes" : [ "object", "functional" ],
+    "id" : "73"
+  }, {
+    "iri" : "http://ontologies/interactioncontext#is_tag_of",
+    "baseIri" : "http://ontologies/interactioncontext",
+    "range" : "67",
+    "label" : {
+      "IRI-based" : "is_tag_of"
+    },
+    "domain" : "47",
+    "attributes" : [ "object" ],
+    "id" : "66"
+  }, {
+    "iri" : "http://ontologies/interactioncontext#has_sensors",
+    "baseIri" : "http://ontologies/interactioncontext",
+    "range" : "12",
+    "label" : {
+      "IRI-based" : "has_sensors"
+    },
+    "domain" : "9",
+    "attributes" : [ "object" ],
+    "id" : "74"
+  } ]
+}

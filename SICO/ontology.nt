@@ -1,0 +1,309 @@
+<http://ontologies/interactioncontext> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://ontologies/interactioncontext> <http://www.w3.org/2002/07/owl#versionIRI> <http://ontologies/interactioncontext> .
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://ontologies/interactioncontext#belongs_to
+<http://ontologies/interactioncontext#belongs_to> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontologies/interactioncontext#belongs_to> <http://www.w3.org/2002/07/owl#inverseOf> <http://ontologies/interactioncontext#has_interactions> .
+<http://ontologies/interactioncontext#belongs_to> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://ontologies/interactioncontext#belongs_to> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontologies/interactioncontext#Interaction> .
+<http://ontologies/interactioncontext#belongs_to> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontologies/interactioncontext#InteractionSequence> .
+# 
+# http://ontologies/interactioncontext#detects
+<http://ontologies/interactioncontext#detects> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontologies/interactioncontext#detects> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontologies/interactioncontext#Sensor> .
+<http://ontologies/interactioncontext#detects> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontologies/interactioncontext#Measure> .
+# 
+# http://ontologies/interactioncontext#executes
+<http://ontologies/interactioncontext#executes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontologies/interactioncontext#executes> <http://www.w3.org/2002/07/owl#inverseOf> <http://ontologies/interactioncontext#is_executed_with> .
+<http://ontologies/interactioncontext#executes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://ontologies/interactioncontext#executes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AsymmetricProperty> .
+<http://ontologies/interactioncontext#executes> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontologies/interactioncontext#InteractionSequence> .
+<http://ontologies/interactioncontext#executes> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontologies/interactioncontext#Subservice> .
+# 
+# http://ontologies/interactioncontext#has_interactions
+<http://ontologies/interactioncontext#has_interactions> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontologies/interactioncontext#has_interactions> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
+<http://ontologies/interactioncontext#has_interactions> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontologies/interactioncontext#InteractionSequence> .
+<http://ontologies/interactioncontext#has_interactions> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontologies/interactioncontext#Interaction> .
+# 
+# http://ontologies/interactioncontext#has_role
+<http://ontologies/interactioncontext#has_role> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontologies/interactioncontext#has_role> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://ontologies/interactioncontext#has_role> <http://www.w3.org/2002/07/owl#inverseOf> <http://ontologies/interactioncontext#is_role_of> .
+<http://ontologies/interactioncontext#has_role> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://ontologies/interactioncontext#has_role> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontologies/interactioncontext#User> .
+# 
+# http://ontologies/interactioncontext#has_sensors
+<http://ontologies/interactioncontext#has_sensors> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontologies/interactioncontext#has_sensors> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontologies/interactioncontext#Product> .
+<http://ontologies/interactioncontext#has_sensors> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontologies/interactioncontext#Sensor> .
+# 
+# http://ontologies/interactioncontext#has_services
+<http://ontologies/interactioncontext#has_services> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontologies/interactioncontext#has_services> <http://www.w3.org/2002/07/owl#inverseOf> <http://ontologies/interactioncontext#is_service_of> .
+<http://ontologies/interactioncontext#has_services> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
+<http://ontologies/interactioncontext#has_services> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontologies/interactioncontext#Product> .
+<http://ontologies/interactioncontext#has_services> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontologies/interactioncontext#Service> .
+# 
+# http://ontologies/interactioncontext#has_subservices
+<http://ontologies/interactioncontext#has_subservices> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontologies/interactioncontext#has_subservices> <http://www.w3.org/2002/07/owl#inverseOf> <http://ontologies/interactioncontext#is_subservice_of> .
+<http://ontologies/interactioncontext#has_subservices> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontologies/interactioncontext#Service> .
+<http://ontologies/interactioncontext#has_subservices> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontologies/interactioncontext#Subservice> .
+# 
+# http://ontologies/interactioncontext#has_tags
+<http://ontologies/interactioncontext#has_tags> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontologies/interactioncontext#has_tags> <http://www.w3.org/2002/07/owl#inverseOf> <http://ontologies/interactioncontext#is_tag_of> .
+<http://ontologies/interactioncontext#has_tags> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#TransitiveProperty> .
+<http://ontologies/interactioncontext#has_tags> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid1 .
+_:genid1 <http://www.w3.org/2002/07/owl#unionOf> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://ontologies/interactioncontext#Subservice> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://ontologies/interactioncontext#Service> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://ontologies/interactioncontext#is_executed_with
+<http://ontologies/interactioncontext#is_executed_with> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontologies/interactioncontext#is_executed_with> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
+<http://ontologies/interactioncontext#is_executed_with> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontologies/interactioncontext#Subservice> .
+<http://ontologies/interactioncontext#is_executed_with> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontologies/interactioncontext#InteractionSequence> .
+# 
+# http://ontologies/interactioncontext#is_for_a
+<http://ontologies/interactioncontext#is_for_a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontologies/interactioncontext#is_for_a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://ontologies/interactioncontext#is_for_a> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontologies/interactioncontext#Rating> .
+<http://ontologies/interactioncontext#is_for_a> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontologies/interactioncontext#Subservice> .
+# 
+# http://ontologies/interactioncontext#is_from_a
+<http://ontologies/interactioncontext#is_from_a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontologies/interactioncontext#is_from_a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://ontologies/interactioncontext#is_from_a> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontologies/interactioncontext#Rating> .
+<http://ontologies/interactioncontext#is_from_a> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontologies/interactioncontext#User> .
+# 
+# http://ontologies/interactioncontext#is_made_by
+<http://ontologies/interactioncontext#is_made_by> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontologies/interactioncontext#is_made_by> <http://www.w3.org/2002/07/owl#inverseOf> <http://ontologies/interactioncontext#makes> .
+<http://ontologies/interactioncontext#is_made_by> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://ontologies/interactioncontext#is_made_by> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontologies/interactioncontext#InteractionSequence> .
+<http://ontologies/interactioncontext#is_made_by> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontologies/interactioncontext#User> .
+# 
+# http://ontologies/interactioncontext#is_role_of
+<http://ontologies/interactioncontext#is_role_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontologies/interactioncontext#is_role_of> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontologies/interactioncontext#User> .
+# 
+# http://ontologies/interactioncontext#is_service_of
+<http://ontologies/interactioncontext#is_service_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontologies/interactioncontext#is_service_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://ontologies/interactioncontext#is_service_of> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontologies/interactioncontext#Service> .
+<http://ontologies/interactioncontext#is_service_of> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontologies/interactioncontext#Product> .
+# 
+# http://ontologies/interactioncontext#is_subservice_of
+<http://ontologies/interactioncontext#is_subservice_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontologies/interactioncontext#is_subservice_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://ontologies/interactioncontext#is_subservice_of> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontologies/interactioncontext#Subservice> .
+<http://ontologies/interactioncontext#is_subservice_of> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontologies/interactioncontext#Service> .
+# 
+# http://ontologies/interactioncontext#is_tag_of
+<http://ontologies/interactioncontext#is_tag_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontologies/interactioncontext#is_tag_of> <http://www.w3.org/2000/01/rdf-schema#range> _:genid4 .
+_:genid4 <http://www.w3.org/2002/07/owl#unionOf> _:genid6 .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid5 .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://ontologies/interactioncontext#Subservice> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://ontologies/interactioncontext#Service> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://ontologies/interactioncontext#is_used_by
+<http://ontologies/interactioncontext#is_used_by> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontologies/interactioncontext#is_used_by> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://ontologies/interactioncontext#is_used_by> <http://www.w3.org/2002/07/owl#inverseOf> <http://ontologies/interactioncontext#uses> .
+<http://ontologies/interactioncontext#is_used_by> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontologies/interactioncontext#Subservice> .
+<http://ontologies/interactioncontext#is_used_by> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontologies/interactioncontext#User> .
+# 
+# http://ontologies/interactioncontext#makes
+<http://ontologies/interactioncontext#makes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontologies/interactioncontext#makes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
+<http://ontologies/interactioncontext#makes> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontologies/interactioncontext#User> .
+<http://ontologies/interactioncontext#makes> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontologies/interactioncontext#InteractionSequence> .
+# 
+# http://ontologies/interactioncontext#occurs_in
+<http://ontologies/interactioncontext#occurs_in> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontologies/interactioncontext#occurs_in> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
+<http://ontologies/interactioncontext#occurs_in> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontologies/interactioncontext#InteractionSequence> .
+<http://ontologies/interactioncontext#occurs_in> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontologies/interactioncontext#Context> .
+# 
+# http://ontologies/interactioncontext#uses
+<http://ontologies/interactioncontext#uses> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontologies/interactioncontext#uses> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
+<http://ontologies/interactioncontext#uses> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AsymmetricProperty> .
+<http://ontologies/interactioncontext#uses> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontologies/interactioncontext#User> .
+<http://ontologies/interactioncontext#uses> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontologies/interactioncontext#Subservice> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://ontologies/interactioncontext#element
+<http://ontologies/interactioncontext#element> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://ontologies/interactioncontext#element> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontologies/interactioncontext#Interaction> .
+<http://ontologies/interactioncontext#element> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://ontologies/interactioncontext#endDate
+<http://ontologies/interactioncontext#endDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://ontologies/interactioncontext#endDate> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid7 .
+_:genid7 <http://www.w3.org/2002/07/owl#unionOf> _:genid9 .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid8 .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://ontologies/interactioncontext#InteractionSequence> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://ontologies/interactioncontext#Interaction> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontologies/interactioncontext#endDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+# 
+# http://ontologies/interactioncontext#id
+<http://ontologies/interactioncontext#id> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://ontologies/interactioncontext#id> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#int> .
+# 
+# http://ontologies/interactioncontext#name
+<http://ontologies/interactioncontext#name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://ontologies/interactioncontext#name> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<http://ontologies/interactioncontext#name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://ontologies/interactioncontext#name> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://ontologies/interactioncontext#order
+<http://ontologies/interactioncontext#order> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://ontologies/interactioncontext#order> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontologies/interactioncontext#Interaction> .
+<http://ontologies/interactioncontext#order> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+# 
+# http://ontologies/interactioncontext#startDate
+<http://ontologies/interactioncontext#startDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://ontologies/interactioncontext#startDate> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid10 .
+_:genid10 <http://www.w3.org/2002/07/owl#unionOf> _:genid12 .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid11 .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://ontologies/interactioncontext#InteractionSequence> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://ontologies/interactioncontext#Interaction> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontologies/interactioncontext#startDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+# 
+# http://ontologies/interactioncontext#tag
+<http://ontologies/interactioncontext#tag> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://ontologies/interactioncontext#tag> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://ontologies/interactioncontext#tag> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://ontologies/interactioncontext#value
+<http://ontologies/interactioncontext#value> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# 
+# http://ontologies/interactioncontext#valueInteraction
+<http://ontologies/interactioncontext#valueInteraction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://ontologies/interactioncontext#valueInteraction> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid13 .
+_:genid13 <http://www.w3.org/2002/07/owl#unionOf> _:genid15 .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid14 .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://ontologies/interactioncontext#InteractionSequence> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://ontologies/interactioncontext#Interaction> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontologies/interactioncontext#valueInteraction> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> .
+# 
+# http://ontologies/interactioncontext#valueRating
+<http://ontologies/interactioncontext#valueRating> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://ontologies/interactioncontext#Context
+<http://ontologies/interactioncontext#Context> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontologies/interactioncontext#Context> <http://www.w3.org/2000/01/rdf-schema#comment> "The top-level class representing a contextual element, which can include devices, environments, identities, and time."@en .
+# 
+# http://ontologies/interactioncontext#Device
+<http://ontologies/interactioncontext#Device> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontologies/interactioncontext#Device> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontologies/interactioncontext#Context> .
+# 
+# http://ontologies/interactioncontext#Environment
+<http://ontologies/interactioncontext#Environment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontologies/interactioncontext#Environment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontologies/interactioncontext#Context> .
+# 
+# http://ontologies/interactioncontext#Identity
+<http://ontologies/interactioncontext#Identity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontologies/interactioncontext#Identity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontologies/interactioncontext#Context> .
+# 
+# http://ontologies/interactioncontext#Information
+<http://ontologies/interactioncontext#Information> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontologies/interactioncontext#Information> <http://www.w3.org/2000/01/rdf-schema#comment> "A class representing general information entities. Subclasses might include measures, rules, and other information-related concepts."@en .
+# 
+# http://ontologies/interactioncontext#Interaction
+<http://ontologies/interactioncontext#Interaction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontologies/interactioncontext#Interaction> <http://www.w3.org/2000/01/rdf-schema#comment> "A class representing interactions between various entities in the context, capturing the dynamics of user-device, device-device, or user-environment interactions."@en .
+# 
+# http://ontologies/interactioncontext#InteractionSequence
+<http://ontologies/interactioncontext#InteractionSequence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontologies/interactioncontext#InteractionSequence> <http://www.w3.org/2000/01/rdf-schema#comment> "A class representing a sequence or series of interactions"@en .
+# 
+# http://ontologies/interactioncontext#Measure
+<http://ontologies/interactioncontext#Measure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontologies/interactioncontext#Measure> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontologies/interactioncontext#Information> .
+# 
+# http://ontologies/interactioncontext#Product
+<http://ontologies/interactioncontext#Product> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontologies/interactioncontext#Product> <http://www.w3.org/2000/01/rdf-schema#comment> "A class representing products or objects that may be associated with sensors, services, or user interactions."@en .
+# 
+# http://ontologies/interactioncontext#Rating
+<http://ontologies/interactioncontext#Rating> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontologies/interactioncontext#Rating> <http://www.w3.org/2000/01/rdf-schema#comment> "A class representing ratings or evaluations provided by users or other entities to interactions, products, or services."@en .
+# 
+# http://ontologies/interactioncontext#Rule
+<http://ontologies/interactioncontext#Rule> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontologies/interactioncontext#Rule> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontologies/interactioncontext#Information> .
+# 
+# http://ontologies/interactioncontext#Sensor
+<http://ontologies/interactioncontext#Sensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontologies/interactioncontext#Sensor> <http://www.w3.org/2000/01/rdf-schema#comment> "Description: A class representing sensors or sensor devices used to collect data within the interaction context."@en .
+# 
+# http://ontologies/interactioncontext#Service
+<http://ontologies/interactioncontext#Service> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontologies/interactioncontext#Service> <http://www.w3.org/2000/01/rdf-schema#comment> "A class representing services or functionalities provided by products or devices within."@en .
+# 
+# http://ontologies/interactioncontext#Subservice
+<http://ontologies/interactioncontext#Subservice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontologies/interactioncontext#Subservice> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontologies/interactioncontext#Service> .
+<http://ontologies/interactioncontext#Subservice> <http://www.w3.org/2000/01/rdf-schema#comment> "A subclass of Service that represents subcomponents or subfunctionalities of larger services, allowing for hierarchical service modeling."@en .
+# 
+# http://ontologies/interactioncontext#Time
+<http://ontologies/interactioncontext#Time> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontologies/interactioncontext#Time> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontologies/interactioncontext#Context> .
+# 
+# http://ontologies/interactioncontext#User
+<http://ontologies/interactioncontext#User> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontologies/interactioncontext#User> <http://www.w3.org/2000/01/rdf-schema#comment> "User"@en .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

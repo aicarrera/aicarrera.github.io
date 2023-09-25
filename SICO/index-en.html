@@ -1,0 +1,1810 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+ <link rel="stylesheet" href="resources/primer.css" media="screen" />    <link rel="stylesheet" href="resources/rec.css" media="screen" />    <link rel="stylesheet" href="resources/extra.css" media="screen" />    <link rel="stylesheet" href="resources/owl.css" media="screen" />    <title>Semantic Interaction Context Ontology (SICO)</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"http://ontologies/interactioncontext","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://ontologies/interactioncontext","name":"Semantic Interaction Context Ontology (SICO)", "headline":"The Semantic Interaction Context Ontology (SICO) is a comprehensive knowledge representation framework designed to capture and model the intricate relationships between users, sensors, devices, and the environment within the context of human-computer interaction. SICO employs the power of Semantic Web technologies, including RDF (Resource Description Framework) and OWL (Web Ontology Language), to structure and organize complex interaction data.SICO encompasses a rich set of classes, object properties, data properties, and rules to facilitate the representation of user actions, sensor data, device interactions, and environmental factors. It enables the seamless integration of sensor-generated data with user behavior, providing a unified view of contextual information crucial for various applications, including context-aware computing, ambient intelligence, and personalized user experiences.This ontology serves as a valuable resource for researchers, developers, and practitioners seeking to enhance the understanding of interaction context and leverage it to build intelligent systems that adapt to users' needs and preferences. SICO's well-defined semantics and modeling capabilities pave the way for advanced reasoning, data analysis, and decision support in dynamic interaction environments.SICO is a versatile tool for academia and industry, offering a foundation for context-aware systems, IoT (Internet of Things) applications, and human-machine interaction studies. Its flexibility allows for extensions and customization to suit specific use cases, making it an essential asset in the field of semantic technologies and intelligent systems.", "dateReleased":"Mon Sep 25 14:21:58 CEST 2023"}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+$(function(){
+    loadHash();
+}); $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>Semantic Interaction Context Ontology (SICO)</h1>
+
+
+<dl>
+<dt>This version:</dt>
+<dd><a href="http://ontologies/interactioncontext">http://ontologies/interactioncontext</a></dd>
+<dt>Latest version:</dt>
+<dd><a href="http://ontologies/interactioncontext">http://ontologies/interactioncontext</a></dd>
+<dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="http://insertlicenseURIhere.example.org" target="_blank"><img src="https://img.shields.io/badge/License-license%20name%20goes%20here-blue.svg" alt="http://insertlicenseURIhere.example.org" /></a>
+</dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
+<!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
+<dd> Retrieved from: http://ontologies/interactioncontext</dd>
+</dl>
+
+<hr/>
+</div>
+<div class="status">
+<div>
+<span>Ontology Specification Draft</span>
+</div>
+</div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
+The Semantic Interaction Context Ontology (SICO) is a comprehensive knowledge representation framework designed to capture and model the intricate relationships between users, sensors, devices, and the environment within the context of human-computer interaction. SICO employs the power of Semantic Web technologies, including RDF (Resource Description Framework) and OWL (Web Ontology Language), to structure and organize complex interaction data.
+
+SICO encompasses a rich set of classes, object properties, data properties, and rules to facilitate the representation of user actions, sensor data, device interactions, and environmental factors. It enables the seamless integration of sensor-generated data with user behavior, providing a unified view of contextual information crucial for various applications, including context-aware computing, ambient intelligence, and personalized user experiences.
+
+This ontology serves as a valuable resource for researchers, developers, and practitioners seeking to enhance the understanding of interaction context and leverage it to build intelligent systems that adapt to users' needs and preferences. SICO's well-defined semantics and modeling capabilities pave the way for advanced reasoning, data analysis, and decision support in dynamic interaction environments.
+
+SICO is a versatile tool for academia and industry, offering a foundation for context-aware systems, IoT (Internet of Things) applications, and human-machine interaction studies. Its flexibility allows for extensions and customization to suit specific use cases, making it an essential asset in the field of semantic technologies and intelligent systems.
+
+</span>
+</div>
+<div id="toc"></div> 
+
+<!--INTRODUCTION SECTION-->
+    <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This is a place holder text for the introduction. The introduction should briefly describe the ontology, its motivation, state of the art and goals.</span>
+<div id="namespacedeclarations">
+<h3 id="ns" class="list">Namespace declarations</h3>
+<div id="ns" align="center">
+<table>
+<caption> <a href="#ns"> Table 1</a>: Namespaces used in the document </caption>
+<tbody>
+<tr><td><b>owl</b></td><td>&lt;http://www.w3.org/2002/07/owl#&gt;</td></tr>
+<tr><td><b>rdf</b></td><td>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</td></tr>
+<tr><td><b>rdfs</b></td><td>&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</td></tr>
+<tr><td><b>sico</b></td><td>&lt;http://ontologies/interactioncontext#&gt;</td></tr>
+<tr><td><b>swrl</b></td><td>&lt;http://www.w3.org/2003/11/swrl#&gt;</td></tr>
+<tr><td><b>swrla</b></td><td>&lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt;</td></tr>
+<tr><td><b>swrlb</b></td><td>&lt;http://www.w3.org/2003/11/swrlb#&gt;</td></tr>
+<tr><td><b>xml</b></td><td>&lt;http://www.w3.org/XML/1998/namespace&gt;</td></tr>
+<tr><td><b>xsd</b></td><td>&lt;http://www.w3.org/2001/XMLSchema#&gt;</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">Semantic Interaction Context Ontology (SICO): Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This ontology has the following classes and properties.</span>
+<h4>Classes</h4>
+<ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#Context" title="http://ontologies/interactioncontext#Context">
+         <span>context</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Device" title="http://ontologies/interactioncontext#Device">
+         <span>device</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Environment" title="http://ontologies/interactioncontext#Environment">
+         <span>environment</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Identity" title="http://ontologies/interactioncontext#Identity">
+         <span>identity</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Information" title="http://ontologies/interactioncontext#Information">
+         <span>information</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Interaction" title="http://ontologies/interactioncontext#Interaction">
+         <span>interaction</span>
+      </a>
+   </li>
+   <li>
+      <a href="#InteractionSequence"
+         title="http://ontologies/interactioncontext#InteractionSequence">
+         <span>interaction sequence</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Measure" title="http://ontologies/interactioncontext#Measure">
+         <span>measure</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Product" title="http://ontologies/interactioncontext#Product">
+         <span>product</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Rating" title="http://ontologies/interactioncontext#Rating">
+         <span>rating</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Rule" title="http://ontologies/interactioncontext#Rule">
+         <span>rule</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Sensor" title="http://ontologies/interactioncontext#Sensor">
+         <span>sensor</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Service" title="http://ontologies/interactioncontext#Service">
+         <span>service</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Subservice" title="http://ontologies/interactioncontext#Subservice">
+         <span>subservice</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Time" title="http://ontologies/interactioncontext#Time">
+         <span>time</span>
+      </a>
+   </li>
+   <li>
+      <a href="#User" title="http://ontologies/interactioncontext#User">
+         <span>user</span>
+      </a>
+   </li>
+</ul><h4>Object Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#belongs_to" title="http://ontologies/interactioncontext#belongs_to">
+         <span>belongs to</span>
+      </a>
+   </li>
+   <li>
+      <a href="#detects" title="http://ontologies/interactioncontext#detects">
+         <span>detects</span>
+      </a>
+   </li>
+   <li>
+      <a href="#executes" title="http://ontologies/interactioncontext#executes">
+         <span>executes</span>
+      </a>
+   </li>
+   <li>
+      <a href="#has_interactions"
+         title="http://ontologies/interactioncontext#has_interactions">
+         <span>has interactions</span>
+      </a>
+   </li>
+   <li>
+      <a href="#has_role" title="http://ontologies/interactioncontext#has_role">
+         <span>has role</span>
+      </a>
+   </li>
+   <li>
+      <a href="#has_sensors" title="http://ontologies/interactioncontext#has_sensors">
+         <span>has sensors</span>
+      </a>
+   </li>
+   <li>
+      <a href="#has_services" title="http://ontologies/interactioncontext#has_services">
+         <span>has services</span>
+      </a>
+   </li>
+   <li>
+      <a href="#has_subservices"
+         title="http://ontologies/interactioncontext#has_subservices">
+         <span>has subservices</span>
+      </a>
+   </li>
+   <li>
+      <a href="#has_tags" title="http://ontologies/interactioncontext#has_tags">
+         <span>has tags</span>
+      </a>
+   </li>
+   <li>
+      <a href="#is_executed_with"
+         title="http://ontologies/interactioncontext#is_executed_with">
+         <span>is executed with</span>
+      </a>
+   </li>
+   <li>
+      <a href="#is_for_a" title="http://ontologies/interactioncontext#is_for_a">
+         <span>is for a</span>
+      </a>
+   </li>
+   <li>
+      <a href="#is_from_a" title="http://ontologies/interactioncontext#is_from_a">
+         <span>is from a</span>
+      </a>
+   </li>
+   <li>
+      <a href="#is_made_by" title="http://ontologies/interactioncontext#is_made_by">
+         <span>is made by</span>
+      </a>
+   </li>
+   <li>
+      <a href="#is_role_of" title="http://ontologies/interactioncontext#is_role_of">
+         <span>is role of</span>
+      </a>
+   </li>
+   <li>
+      <a href="#is_service_of"
+         title="http://ontologies/interactioncontext#is_service_of">
+         <span>is service of</span>
+      </a>
+   </li>
+   <li>
+      <a href="#is_subservice_of"
+         title="http://ontologies/interactioncontext#is_subservice_of">
+         <span>is subservice of</span>
+      </a>
+   </li>
+   <li>
+      <a href="#is_tag_of" title="http://ontologies/interactioncontext#is_tag_of">
+         <span>is tag of</span>
+      </a>
+   </li>
+   <li>
+      <a href="#is_used_by" title="http://ontologies/interactioncontext#is_used_by">
+         <span>is used by</span>
+      </a>
+   </li>
+   <li>
+      <a href="#makes" title="http://ontologies/interactioncontext#makes">
+         <span>makes</span>
+      </a>
+   </li>
+   <li>
+      <a href="#occurs_in" title="http://ontologies/interactioncontext#occurs_in">
+         <span>occurs in</span>
+      </a>
+   </li>
+   <li>
+      <a href="#uses" title="http://ontologies/interactioncontext#uses">
+         <span>uses</span>
+      </a>
+   </li>
+</ul><h4>Data Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#element" title="http://ontologies/interactioncontext#element">
+         <span>element</span>
+      </a>
+   </li>
+   <li>
+      <a href="#endDate" title="http://ontologies/interactioncontext#endDate">
+         <span>end date</span>
+      </a>
+   </li>
+   <li>
+      <a href="#id" title="http://ontologies/interactioncontext#id">
+         <span>id</span>
+      </a>
+   </li>
+   <li>
+      <a href="#name" title="http://ontologies/interactioncontext#name">
+         <span>name</span>
+      </a>
+   </li>
+   <li>
+      <a href="#order" title="http://ontologies/interactioncontext#order">
+         <span>order</span>
+      </a>
+   </li>
+   <li>
+      <a href="#startDate" title="http://ontologies/interactioncontext#startDate">
+         <span>start date</span>
+      </a>
+   </li>
+   <li>
+      <a href="#tag" title="http://ontologies/interactioncontext#tag">
+         <span>tag</span>
+      </a>
+   </li>
+   <li>
+      <a href="#valueInteraction"
+         title="http://ontologies/interactioncontext#valueInteraction">
+         <span>value interaction</span>
+      </a>
+   </li>
+</ul><iframe align="center" width="100%" height ="500px" src="webvowl/index.html"></iframe> 
+</div>
+  
+
+<!--DESCRIPTION SECTION-->
+    <div id="description"><h2 id="desc" class="list">Semantic Interaction Context Ontology (SICO): Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+
+<span class="markdown">The Semantic Interaction Context Ontology (SICO) is a comprehensive knowledge representation framework designed to capture and model the intricate relationships between users, sensors, devices, and the environment within the context of human-computer interaction. SICO employs the power of Semantic Web technologies, including RDF (Resource Description Framework) and OWL (Web Ontology Language), to structure and organize complex interaction data.
+
+SICO encompasses a rich set of classes, object properties, data properties, and rules to facilitate the representation of user actions, sensor data, device interactions, and environmental factors. It enables the seamless integration of sensor-generated data with user behavior, providing a unified view of contextual information crucial for various applications, including context-aware computing, ambient intelligence, and personalized user experiences.
+
+This ontology serves as a valuable resource for researchers, developers, and practitioners seeking to enhance the understanding of interaction context and leverage it to build intelligent systems that adapt to users' needs and preferences. SICO's well-defined semantics and modeling capabilities pave the way for advanced reasoning, data analysis, and decision support in dynamic interaction environments.
+
+SICO is a versatile tool for academia and industry, offering a foundation for context-aware systems, IoT (Internet of Things) applications, and human-machine interaction studies. Its flexibility allows for extensions and customization to suit specific use cases, making it an essential asset in the field of semantic technologies and intelligent systems.
+
+</span></div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">Cross-reference for Semantic Interaction Context Ontology (SICO) classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by Semantic Interaction Context Ontology (SICO).
+<div xmlns:widoco="https://w3id.org/widoco/vocab#"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     id="classes">
+   <h3 id="classes-headline" class="list">Classes</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#Context" title="http://ontologies/interactioncontext#Context">
+            <span>context</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Device" title="http://ontologies/interactioncontext#Device">
+            <span>device</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Environment" title="http://ontologies/interactioncontext#Environment">
+            <span>environment</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Identity" title="http://ontologies/interactioncontext#Identity">
+            <span>identity</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Information" title="http://ontologies/interactioncontext#Information">
+            <span>information</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Interaction" title="http://ontologies/interactioncontext#Interaction">
+            <span>interaction</span>
+         </a>
+      </li>
+      <li>
+         <a href="#InteractionSequence"
+            title="http://ontologies/interactioncontext#InteractionSequence">
+            <span>interaction sequence</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Measure" title="http://ontologies/interactioncontext#Measure">
+            <span>measure</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Product" title="http://ontologies/interactioncontext#Product">
+            <span>product</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Rating" title="http://ontologies/interactioncontext#Rating">
+            <span>rating</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Rule" title="http://ontologies/interactioncontext#Rule">
+            <span>rule</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Sensor" title="http://ontologies/interactioncontext#Sensor">
+            <span>sensor</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Service" title="http://ontologies/interactioncontext#Service">
+            <span>service</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Subservice" title="http://ontologies/interactioncontext#Subservice">
+            <span>subservice</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Time" title="http://ontologies/interactioncontext#Time">
+            <span>time</span>
+         </a>
+      </li>
+      <li>
+         <a href="#User" title="http://ontologies/interactioncontext#User">
+            <span>user</span>
+         </a>
+      </li>
+   </ul>
+   <div class="entity" id="Context">
+      <h3>context<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontologies/interactioncontext#Context</p>
+      <div class="comment">
+         <span class="markdown">The top-level class representing a contextual element, which can include devices, environments, identities, and time.</span>
+      </div>
+      <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#Device" title="http://ontologies/interactioncontext#Device">device</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Environment" title="http://ontologies/interactioncontext#Environment">environment</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Identity" title="http://ontologies/interactioncontext#Identity">identity</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Time" title="http://ontologies/interactioncontext#Time">time</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#occurs_in" title="http://ontologies/interactioncontext#occurs_in">occurs in</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Device">
+      <h3>device<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontologies/interactioncontext#Device</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Context" title="http://ontologies/interactioncontext#Context">context</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Environment">
+      <h3>environment<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontologies/interactioncontext#Environment</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Context" title="http://ontologies/interactioncontext#Context">context</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Identity">
+      <h3>identity<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontologies/interactioncontext#Identity</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Context" title="http://ontologies/interactioncontext#Context">context</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Information">
+      <h3>information<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontologies/interactioncontext#Information</p>
+      <div class="comment">
+         <span class="markdown">A class representing general information entities. Subclasses might include measures, rules, and other information-related concepts.</span>
+      </div>
+      <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#Measure" title="http://ontologies/interactioncontext#Measure">measure</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Rule" title="http://ontologies/interactioncontext#Rule">rule</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Interaction">
+      <h3>interaction<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontologies/interactioncontext#Interaction</p>
+      <div class="comment">
+         <span class="markdown">A class representing interactions between various entities in the context, capturing the dynamics of user-device, device-device, or user-environment interactions.</span>
+      </div>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#belongs_to" title="http://ontologies/interactioncontext#belongs_to">belongs to</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#element" title="http://ontologies/interactioncontext#element">element</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#order" title="http://ontologies/interactioncontext#order">order</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#has_interactions"
+               title="http://ontologies/interactioncontext#has_interactions">has interactions</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="InteractionSequence">
+      <h3>interaction sequence<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontologies/interactioncontext#InteractionSequence</p>
+      <div class="comment">
+         <span class="markdown">A class representing a sequence or series of interactions</span>
+      </div>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#executes" title="http://ontologies/interactioncontext#executes">executes</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#has_interactions"
+               title="http://ontologies/interactioncontext#has_interactions">has interactions</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#is_made_by" title="http://ontologies/interactioncontext#is_made_by">is made by</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#occurs_in" title="http://ontologies/interactioncontext#occurs_in">occurs in</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#belongs_to" title="http://ontologies/interactioncontext#belongs_to">belongs to</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#is_executed_with"
+               title="http://ontologies/interactioncontext#is_executed_with">is executed with</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#makes" title="http://ontologies/interactioncontext#makes">makes</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Measure">
+      <h3>measure<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontologies/interactioncontext#Measure</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Information" title="http://ontologies/interactioncontext#Information">information</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#detects" title="http://ontologies/interactioncontext#detects">detects</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Product">
+      <h3>product<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontologies/interactioncontext#Product</p>
+      <div class="comment">
+         <span class="markdown">A class representing products or objects that may be associated with sensors, services, or user interactions.</span>
+      </div>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#has_sensors" title="http://ontologies/interactioncontext#has_sensors">has sensors</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#has_services" title="http://ontologies/interactioncontext#has_services">has services</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#is_service_of"
+               title="http://ontologies/interactioncontext#is_service_of">is service of</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Rating">
+      <h3>rating<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontologies/interactioncontext#Rating</p>
+      <div class="comment">
+         <span class="markdown">A class representing ratings or evaluations provided by users or other entities to interactions, products, or services.</span>
+      </div>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#is_for_a" title="http://ontologies/interactioncontext#is_for_a">is for a</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#is_from_a" title="http://ontologies/interactioncontext#is_from_a">is from a</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Rule">
+      <h3>rule<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontologies/interactioncontext#Rule</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Information" title="http://ontologies/interactioncontext#Information">information</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Sensor">
+      <h3>sensor<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontologies/interactioncontext#Sensor</p>
+      <div class="comment">
+         <span class="markdown">Description: A class representing sensors or sensor devices used to collect data within the interaction context.</span>
+      </div>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#detects" title="http://ontologies/interactioncontext#detects">detects</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#has_sensors" title="http://ontologies/interactioncontext#has_sensors">has sensors</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Service">
+      <h3>service<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontologies/interactioncontext#Service</p>
+      <div class="comment">
+         <span class="markdown">A class representing services or functionalities provided by products or devices within.</span>
+      </div>
+      <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#Subservice" title="http://ontologies/interactioncontext#Subservice">subservice</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#has_subservices"
+               title="http://ontologies/interactioncontext#has_subservices">has subservices</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#is_service_of"
+               title="http://ontologies/interactioncontext#is_service_of">is service of</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#has_services" title="http://ontologies/interactioncontext#has_services">has services</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#is_subservice_of"
+               title="http://ontologies/interactioncontext#is_subservice_of">is subservice of</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Subservice">
+      <h3>subservice<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontologies/interactioncontext#Subservice</p>
+      <div class="comment">
+         <span class="markdown">A subclass of Service that represents subcomponents or subfunctionalities of larger services, allowing for hierarchical service modeling.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Service" title="http://ontologies/interactioncontext#Service">service</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#is_executed_with"
+               title="http://ontologies/interactioncontext#is_executed_with">is executed with</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#is_subservice_of"
+               title="http://ontologies/interactioncontext#is_subservice_of">is subservice of</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#is_used_by" title="http://ontologies/interactioncontext#is_used_by">is used by</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#executes" title="http://ontologies/interactioncontext#executes">executes</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#has_subservices"
+               title="http://ontologies/interactioncontext#has_subservices">has subservices</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#is_for_a" title="http://ontologies/interactioncontext#is_for_a">is for a</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#uses" title="http://ontologies/interactioncontext#uses">uses</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Time">
+      <h3>time<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontologies/interactioncontext#Time</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Context" title="http://ontologies/interactioncontext#Context">context</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="User">
+      <h3>user<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontologies/interactioncontext#User</p>
+      <div class="comment">
+         <span class="markdown">User</span>
+      </div>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#has_role" title="http://ontologies/interactioncontext#has_role">has role</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#makes" title="http://ontologies/interactioncontext#makes">makes</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#uses" title="http://ontologies/interactioncontext#uses">uses</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#is_from_a" title="http://ontologies/interactioncontext#is_from_a">is from a</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#is_made_by" title="http://ontologies/interactioncontext#is_made_by">is made by</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#is_role_of" title="http://ontologies/interactioncontext#is_role_of">is role of</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#is_used_by" title="http://ontologies/interactioncontext#is_used_by">is used by</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     id="objectproperties">
+   <h3 id="properties" class="list">Object Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#belongs_to" title="http://ontologies/interactioncontext#belongs_to">
+            <span>belongs to</span>
+         </a>
+      </li>
+      <li>
+         <a href="#detects" title="http://ontologies/interactioncontext#detects">
+            <span>detects</span>
+         </a>
+      </li>
+      <li>
+         <a href="#executes" title="http://ontologies/interactioncontext#executes">
+            <span>executes</span>
+         </a>
+      </li>
+      <li>
+         <a href="#has_interactions"
+            title="http://ontologies/interactioncontext#has_interactions">
+            <span>has interactions</span>
+         </a>
+      </li>
+      <li>
+         <a href="#has_role" title="http://ontologies/interactioncontext#has_role">
+            <span>has role</span>
+         </a>
+      </li>
+      <li>
+         <a href="#has_sensors" title="http://ontologies/interactioncontext#has_sensors">
+            <span>has sensors</span>
+         </a>
+      </li>
+      <li>
+         <a href="#has_services" title="http://ontologies/interactioncontext#has_services">
+            <span>has services</span>
+         </a>
+      </li>
+      <li>
+         <a href="#has_subservices"
+            title="http://ontologies/interactioncontext#has_subservices">
+            <span>has subservices</span>
+         </a>
+      </li>
+      <li>
+         <a href="#has_tags" title="http://ontologies/interactioncontext#has_tags">
+            <span>has tags</span>
+         </a>
+      </li>
+      <li>
+         <a href="#is_executed_with"
+            title="http://ontologies/interactioncontext#is_executed_with">
+            <span>is executed with</span>
+         </a>
+      </li>
+      <li>
+         <a href="#is_for_a" title="http://ontologies/interactioncontext#is_for_a">
+            <span>is for a</span>
+         </a>
+      </li>
+      <li>
+         <a href="#is_from_a" title="http://ontologies/interactioncontext#is_from_a">
+            <span>is from a</span>
+         </a>
+      </li>
+      <li>
+         <a href="#is_made_by" title="http://ontologies/interactioncontext#is_made_by">
+            <span>is made by</span>
+         </a>
+      </li>
+      <li>
+         <a href="#is_role_of" title="http://ontologies/interactioncontext#is_role_of">
+            <span>is role of</span>
+         </a>
+      </li>
+      <li>
+         <a href="#is_service_of"
+            title="http://ontologies/interactioncontext#is_service_of">
+            <span>is service of</span>
+         </a>
+      </li>
+      <li>
+         <a href="#is_subservice_of"
+            title="http://ontologies/interactioncontext#is_subservice_of">
+            <span>is subservice of</span>
+         </a>
+      </li>
+      <li>
+         <a href="#is_tag_of" title="http://ontologies/interactioncontext#is_tag_of">
+            <span>is tag of</span>
+         </a>
+      </li>
+      <li>
+         <a href="#is_used_by" title="http://ontologies/interactioncontext#is_used_by">
+            <span>is used by</span>
+         </a>
+      </li>
+      <li>
+         <a href="#makes" title="http://ontologies/interactioncontext#makes">
+            <span>makes</span>
+         </a>
+      </li>
+      <li>
+         <a href="#occurs_in" title="http://ontologies/interactioncontext#occurs_in">
+            <span>occurs in</span>
+         </a>
+      </li>
+      <li>
+         <a href="#uses" title="http://ontologies/interactioncontext#uses">
+            <span>uses</span>
+         </a>
+      </li>
+   </ul>
+   <div class="entity" id="belongs_to">
+      <h3>belongs to<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontologies/interactioncontext#belongs_to</p>
+      <div class="description">
+         <p>
+            <strong>has characteristics:
+                </strong> functional</p>
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Interaction" title="http://ontologies/interactioncontext#Interaction">interaction</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#InteractionSequence"
+                  title="http://ontologies/interactioncontext#InteractionSequence">interaction sequence</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#has_interactions"
+                  title="http://ontologies/interactioncontext#has_interactions">has interactions</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="detects">
+      <h3>detects<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontologies/interactioncontext#detects</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Sensor" title="http://ontologies/interactioncontext#Sensor">sensor</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Measure" title="http://ontologies/interactioncontext#Measure">measure</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="executes">
+      <h3>executes<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontologies/interactioncontext#executes</p>
+      <div class="description">
+         <p>
+            <strong>has characteristics:
+                </strong> functional, asymmetric</p>
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#InteractionSequence"
+                  title="http://ontologies/interactioncontext#InteractionSequence">interaction sequence</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Subservice" title="http://ontologies/interactioncontext#Subservice">subservice</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#is_executed_with"
+                  title="http://ontologies/interactioncontext#is_executed_with">is executed with</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="has_interactions">
+      <h3>has interactions<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontologies/interactioncontext#has_interactions</p>
+      <div class="description">
+         <p>
+            <strong>has characteristics:
+                </strong> inverse functional</p>
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#InteractionSequence"
+                  title="http://ontologies/interactioncontext#InteractionSequence">interaction sequence</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Interaction" title="http://ontologies/interactioncontext#Interaction">interaction</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#belongs_to" title="http://ontologies/interactioncontext#belongs_to">belongs to</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="has_role">
+      <h3>has role<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontologies/interactioncontext#has_role</p>
+      <div class="description">
+         <p>
+            <strong>has characteristics:
+                </strong> functional</p>
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.w3.org/2002/07/owl#topObjectProperty"
+                  target="_blank"
+                  title="http://www.w3.org/2002/07/owl#topObjectProperty">top object property</a>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#User" title="http://ontologies/interactioncontext#User">user</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#is_role_of" title="http://ontologies/interactioncontext#is_role_of">is role of</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="has_sensors">
+      <h3>has sensors<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontologies/interactioncontext#has_sensors</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Product" title="http://ontologies/interactioncontext#Product">product</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Sensor" title="http://ontologies/interactioncontext#Sensor">sensor</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="has_services">
+      <h3>has services<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontologies/interactioncontext#has_services</p>
+      <div class="description">
+         <p>
+            <strong>has characteristics:
+                </strong> inverse functional</p>
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Product" title="http://ontologies/interactioncontext#Product">product</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Service" title="http://ontologies/interactioncontext#Service">service</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#is_service_of"
+                  title="http://ontologies/interactioncontext#is_service_of">is service of</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="has_subservices">
+      <h3>has subservices<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontologies/interactioncontext#has_subservices</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Service" title="http://ontologies/interactioncontext#Service">service</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Subservice" title="http://ontologies/interactioncontext#Subservice">subservice</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#is_subservice_of"
+                  title="http://ontologies/interactioncontext#is_subservice_of">is subservice of</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="has_tags">
+      <h3>has tags<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontologies/interactioncontext#has_tags</p>
+      <div class="description">
+         <p>
+            <strong>has characteristics:
+                </strong> transitive</p>
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Service" title="http://ontologies/interactioncontext#Service">service</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#Subservice" title="http://ontologies/interactioncontext#Subservice">subservice</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#is_tag_of" title="http://ontologies/interactioncontext#is_tag_of">is tag of</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="is_executed_with">
+      <h3>is executed with<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontologies/interactioncontext#is_executed_with</p>
+      <div class="description">
+         <p>
+            <strong>has characteristics:
+                </strong> inverse functional</p>
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Subservice" title="http://ontologies/interactioncontext#Subservice">subservice</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#InteractionSequence"
+                  title="http://ontologies/interactioncontext#InteractionSequence">interaction sequence</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#executes" title="http://ontologies/interactioncontext#executes">executes</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="is_for_a">
+      <h3>is for a<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontologies/interactioncontext#is_for_a</p>
+      <div class="description">
+         <p>
+            <strong>has characteristics:
+                </strong> functional</p>
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Rating" title="http://ontologies/interactioncontext#Rating">rating</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Subservice" title="http://ontologies/interactioncontext#Subservice">subservice</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="is_from_a">
+      <h3>is from a<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontologies/interactioncontext#is_from_a</p>
+      <div class="description">
+         <p>
+            <strong>has characteristics:
+                </strong> functional</p>
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Rating" title="http://ontologies/interactioncontext#Rating">rating</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#User" title="http://ontologies/interactioncontext#User">user</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="is_made_by">
+      <h3>is made by<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontologies/interactioncontext#is_made_by</p>
+      <div class="description">
+         <p>
+            <strong>has characteristics:
+                </strong> functional</p>
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#InteractionSequence"
+                  title="http://ontologies/interactioncontext#InteractionSequence">interaction sequence</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#User" title="http://ontologies/interactioncontext#User">user</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#makes" title="http://ontologies/interactioncontext#makes">makes</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="is_role_of">
+      <h3>is role of<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontologies/interactioncontext#is_role_of</p>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="#User" title="http://ontologies/interactioncontext#User">user</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#has_role" title="http://ontologies/interactioncontext#has_role">has role</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="is_service_of">
+      <h3>is service of<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontologies/interactioncontext#is_service_of</p>
+      <div class="description">
+         <p>
+            <strong>has characteristics:
+                </strong> functional</p>
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Service" title="http://ontologies/interactioncontext#Service">service</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Product" title="http://ontologies/interactioncontext#Product">product</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#has_services" title="http://ontologies/interactioncontext#has_services">has services</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="is_subservice_of">
+      <h3>is subservice of<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontologies/interactioncontext#is_subservice_of</p>
+      <div class="description">
+         <p>
+            <strong>has characteristics:
+                </strong> functional</p>
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Subservice" title="http://ontologies/interactioncontext#Subservice">subservice</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Service" title="http://ontologies/interactioncontext#Service">service</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#has_subservices"
+                  title="http://ontologies/interactioncontext#has_subservices">has subservices</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="is_tag_of">
+      <h3>is tag of<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontologies/interactioncontext#is_tag_of</p>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Service" title="http://ontologies/interactioncontext#Service">service</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#Subservice" title="http://ontologies/interactioncontext#Subservice">subservice</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#has_tags" title="http://ontologies/interactioncontext#has_tags">has tags</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="is_used_by">
+      <h3>is used by<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontologies/interactioncontext#is_used_by</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.w3.org/2002/07/owl#topObjectProperty"
+                  target="_blank"
+                  title="http://www.w3.org/2002/07/owl#topObjectProperty">top object property</a>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Subservice" title="http://ontologies/interactioncontext#Subservice">subservice</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#User" title="http://ontologies/interactioncontext#User">user</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#uses" title="http://ontologies/interactioncontext#uses">uses</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="makes">
+      <h3>makes<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontologies/interactioncontext#makes</p>
+      <div class="description">
+         <p>
+            <strong>has characteristics:
+                </strong> inverse functional</p>
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#User" title="http://ontologies/interactioncontext#User">user</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#InteractionSequence"
+                  title="http://ontologies/interactioncontext#InteractionSequence">interaction sequence</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#is_made_by" title="http://ontologies/interactioncontext#is_made_by">is made by</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="occurs_in">
+      <h3>occurs in<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontologies/interactioncontext#occurs_in</p>
+      <div class="description">
+         <p>
+            <strong>has characteristics:
+                </strong> inverse functional</p>
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#InteractionSequence"
+                  title="http://ontologies/interactioncontext#InteractionSequence">interaction sequence</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Context" title="http://ontologies/interactioncontext#Context">context</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="uses">
+      <h3>uses<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontologies/interactioncontext#uses</p>
+      <div class="description">
+         <p>
+            <strong>has characteristics:
+                </strong> inverse functional, asymmetric</p>
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#User" title="http://ontologies/interactioncontext#User">user</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Subservice" title="http://ontologies/interactioncontext#Subservice">subservice</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#is_used_by" title="http://ontologies/interactioncontext#is_used_by">is used by</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     id="dataproperties">
+   <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#element" title="http://ontologies/interactioncontext#element">
+            <span>element</span>
+         </a>
+      </li>
+      <li>
+         <a href="#endDate" title="http://ontologies/interactioncontext#endDate">
+            <span>end date</span>
+         </a>
+      </li>
+      <li>
+         <a href="#id" title="http://ontologies/interactioncontext#id">
+            <span>id</span>
+         </a>
+      </li>
+      <li>
+         <a href="#name" title="http://ontologies/interactioncontext#name">
+            <span>name</span>
+         </a>
+      </li>
+      <li>
+         <a href="#order" title="http://ontologies/interactioncontext#order">
+            <span>order</span>
+         </a>
+      </li>
+      <li>
+         <a href="#startDate" title="http://ontologies/interactioncontext#startDate">
+            <span>start date</span>
+         </a>
+      </li>
+      <li>
+         <a href="#tag" title="http://ontologies/interactioncontext#tag">
+            <span>tag</span>
+         </a>
+      </li>
+      <li>
+         <a href="#valueInteraction"
+            title="http://ontologies/interactioncontext#valueInteraction">
+            <span>value interaction</span>
+         </a>
+      </li>
+   </ul>
+   <div class="entity" id="element">
+      <h3>element<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontologies/interactioncontext#element</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Interaction" title="http://ontologies/interactioncontext#Interaction">interaction</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="endDate">
+      <h3>end date<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontologies/interactioncontext#endDate</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Interaction" title="http://ontologies/interactioncontext#Interaction">interaction</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#InteractionSequence"
+                  title="http://ontologies/interactioncontext#InteractionSequence">interaction sequence</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#dateTime"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#dateTime">date time</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="id">
+      <h3>id<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontologies/interactioncontext#id</p>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#int"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#int">int</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="name">
+      <h3>name<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontologies/interactioncontext#name</p>
+      <div class="description">
+         <p>
+            <strong>has characteristics:
+                </strong> functional</p>
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.w3.org/2002/07/owl#topDataProperty"
+                  target="_blank"
+                  title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</a>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="order">
+      <h3>order<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontologies/interactioncontext#order</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Interaction" title="http://ontologies/interactioncontext#Interaction">interaction</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="startDate">
+      <h3>start date<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontologies/interactioncontext#startDate</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Interaction" title="http://ontologies/interactioncontext#Interaction">interaction</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#InteractionSequence"
+                  title="http://ontologies/interactioncontext#InteractionSequence">interaction sequence</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#dateTime"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#dateTime">date time</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="tag">
+      <h3>tag<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontologies/interactioncontext#tag</p>
+      <div class="description">
+         <p>
+            <strong>has characteristics:
+                </strong> functional</p>
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="valueInteraction">
+      <h3>value interaction<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontologies/interactioncontext#valueInteraction</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Interaction" title="http://ontologies/interactioncontext#Interaction">interaction</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#InteractionSequence"
+                  title="http://ontologies/interactioncontext#InteractionSequence">interaction sequence</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#double"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#double">double</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+</div>
+</div>
+</div>
+    
+
+<!--REFERENCES SECTION-->
+  <div id="references">
+<h2 id="ref" class="list">References <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+Add your references here. It is recommended to have them as a list.</span>
+
+</div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>

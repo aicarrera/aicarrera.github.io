@@ -1,0 +1,330 @@
+@prefix : <http://ontologies/interactioncontext#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://ontologies/interactioncontext#> .
+
+<http://ontologies/interactioncontext> rdf:type owl:Ontology ;
+                                        owl:versionIRI <http://ontologies/interactioncontext> .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://ontologies/interactioncontext#belongs_to
+:belongs_to rdf:type owl:ObjectProperty ;
+            owl:inverseOf :has_interactions ;
+            rdf:type owl:FunctionalProperty ;
+            rdfs:domain :Interaction ;
+            rdfs:range :InteractionSequence .
+
+
+###  http://ontologies/interactioncontext#detects
+:detects rdf:type owl:ObjectProperty ;
+         rdfs:domain :Sensor ;
+         rdfs:range :Measure .
+
+
+###  http://ontologies/interactioncontext#executes
+:executes rdf:type owl:ObjectProperty ;
+          owl:inverseOf :is_executed_with ;
+          rdf:type owl:FunctionalProperty ,
+                   owl:AsymmetricProperty ;
+          rdfs:domain :InteractionSequence ;
+          rdfs:range :Subservice .
+
+
+###  http://ontologies/interactioncontext#has_interactions
+:has_interactions rdf:type owl:ObjectProperty ,
+                           owl:InverseFunctionalProperty ;
+                  rdfs:domain :InteractionSequence ;
+                  rdfs:range :Interaction .
+
+
+###  http://ontologies/interactioncontext#has_role
+:has_role rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          owl:inverseOf :is_role_of ;
+          rdf:type owl:FunctionalProperty ;
+          rdfs:domain :User .
+
+
+###  http://ontologies/interactioncontext#has_sensors
+:has_sensors rdf:type owl:ObjectProperty ;
+             rdfs:domain :Product ;
+             rdfs:range :Sensor .
+
+
+###  http://ontologies/interactioncontext#has_services
+:has_services rdf:type owl:ObjectProperty ;
+              owl:inverseOf :is_service_of ;
+              rdf:type owl:InverseFunctionalProperty ;
+              rdfs:domain :Product ;
+              rdfs:range :Service .
+
+
+###  http://ontologies/interactioncontext#has_subservices
+:has_subservices rdf:type owl:ObjectProperty ;
+                 owl:inverseOf :is_subservice_of ;
+                 rdfs:domain :Service ;
+                 rdfs:range :Subservice .
+
+
+###  http://ontologies/interactioncontext#has_tags
+:has_tags rdf:type owl:ObjectProperty ;
+          owl:inverseOf :is_tag_of ;
+          rdf:type owl:TransitiveProperty ;
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( :Service
+                                      :Subservice
+                                    )
+                      ] .
+
+
+###  http://ontologies/interactioncontext#is_executed_with
+:is_executed_with rdf:type owl:ObjectProperty ,
+                           owl:InverseFunctionalProperty ;
+                  rdfs:domain :Subservice ;
+                  rdfs:range :InteractionSequence .
+
+
+###  http://ontologies/interactioncontext#is_for_a
+:is_for_a rdf:type owl:ObjectProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain :Rating ;
+          rdfs:range :Subservice .
+
+
+###  http://ontologies/interactioncontext#is_from_a
+:is_from_a rdf:type owl:ObjectProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain :Rating ;
+           rdfs:range :User .
+
+
+###  http://ontologies/interactioncontext#is_made_by
+:is_made_by rdf:type owl:ObjectProperty ;
+            owl:inverseOf :makes ;
+            rdf:type owl:FunctionalProperty ;
+            rdfs:domain :InteractionSequence ;
+            rdfs:range :User .
+
+
+###  http://ontologies/interactioncontext#is_role_of
+:is_role_of rdf:type owl:ObjectProperty ;
+            rdfs:range :User .
+
+
+###  http://ontologies/interactioncontext#is_service_of
+:is_service_of rdf:type owl:ObjectProperty ,
+                        owl:FunctionalProperty ;
+               rdfs:domain :Service ;
+               rdfs:range :Product .
+
+
+###  http://ontologies/interactioncontext#is_subservice_of
+:is_subservice_of rdf:type owl:ObjectProperty ,
+                           owl:FunctionalProperty ;
+                  rdfs:domain :Subservice ;
+                  rdfs:range :Service .
+
+
+###  http://ontologies/interactioncontext#is_tag_of
+:is_tag_of rdf:type owl:ObjectProperty ;
+           rdfs:range [ rdf:type owl:Class ;
+                        owl:unionOf ( :Service
+                                      :Subservice
+                                    )
+                      ] .
+
+
+###  http://ontologies/interactioncontext#is_used_by
+:is_used_by rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            owl:inverseOf :uses ;
+            rdfs:domain :Subservice ;
+            rdfs:range :User .
+
+
+###  http://ontologies/interactioncontext#makes
+:makes rdf:type owl:ObjectProperty ,
+                owl:InverseFunctionalProperty ;
+       rdfs:domain :User ;
+       rdfs:range :InteractionSequence .
+
+
+###  http://ontologies/interactioncontext#occurs_in
+:occurs_in rdf:type owl:ObjectProperty ,
+                    owl:InverseFunctionalProperty ;
+           rdfs:domain :InteractionSequence ;
+           rdfs:range :Context .
+
+
+###  http://ontologies/interactioncontext#uses
+:uses rdf:type owl:ObjectProperty ,
+               owl:InverseFunctionalProperty ,
+               owl:AsymmetricProperty ;
+      rdfs:domain :User ;
+      rdfs:range :Subservice .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://ontologies/interactioncontext#element
+:element rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Interaction ;
+         rdfs:range xsd:string .
+
+
+###  http://ontologies/interactioncontext#endDate
+:endDate rdf:type owl:DatatypeProperty ;
+         rdfs:domain [ rdf:type owl:Class ;
+                       owl:unionOf ( :Interaction
+                                     :InteractionSequence
+                                   )
+                     ] ;
+         rdfs:range xsd:dateTime .
+
+
+###  http://ontologies/interactioncontext#id
+:id rdf:type owl:DatatypeProperty ;
+    rdfs:range xsd:int .
+
+
+###  http://ontologies/interactioncontext#name
+:name rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf owl:topDataProperty ;
+      rdf:type owl:FunctionalProperty ;
+      rdfs:range xsd:string .
+
+
+###  http://ontologies/interactioncontext#order
+:order rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Interaction ;
+       rdfs:range xsd:integer .
+
+
+###  http://ontologies/interactioncontext#startDate
+:startDate rdf:type owl:DatatypeProperty ;
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( :Interaction
+                                       :InteractionSequence
+                                     )
+                       ] ;
+           rdfs:range xsd:dateTime .
+
+
+###  http://ontologies/interactioncontext#tag
+:tag rdf:type owl:DatatypeProperty ,
+              owl:FunctionalProperty ;
+     rdfs:range xsd:string .
+
+
+###  http://ontologies/interactioncontext#value
+:value rdf:type owl:DatatypeProperty .
+
+
+###  http://ontologies/interactioncontext#valueInteraction
+:valueInteraction rdf:type owl:DatatypeProperty ;
+                  rdfs:domain [ rdf:type owl:Class ;
+                                owl:unionOf ( :Interaction
+                                              :InteractionSequence
+                                            )
+                              ] ;
+                  rdfs:range xsd:double .
+
+
+###  http://ontologies/interactioncontext#valueRating
+:valueRating rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://ontologies/interactioncontext#Context
+:Context rdf:type owl:Class ;
+         rdfs:comment "The top-level class representing a contextual element, which can include devices, environments, identities, and time."@en .
+
+
+###  http://ontologies/interactioncontext#Device
+:Device rdf:type owl:Class ;
+        rdfs:subClassOf :Context .
+
+
+###  http://ontologies/interactioncontext#Environment
+:Environment rdf:type owl:Class ;
+             rdfs:subClassOf :Context .
+
+
+###  http://ontologies/interactioncontext#Identity
+:Identity rdf:type owl:Class ;
+          rdfs:subClassOf :Context .
+
+
+###  http://ontologies/interactioncontext#Information
+:Information rdf:type owl:Class ;
+             rdfs:comment "A class representing general information entities. Subclasses might include measures, rules, and other information-related concepts."@en .
+
+
+###  http://ontologies/interactioncontext#Interaction
+:Interaction rdf:type owl:Class ;
+             rdfs:comment "A class representing interactions between various entities in the context, capturing the dynamics of user-device, device-device, or user-environment interactions."@en .
+
+
+###  http://ontologies/interactioncontext#InteractionSequence
+:InteractionSequence rdf:type owl:Class ;
+                     rdfs:comment "A class representing a sequence or series of interactions"@en .
+
+
+###  http://ontologies/interactioncontext#Measure
+:Measure rdf:type owl:Class ;
+         rdfs:subClassOf :Information .
+
+
+###  http://ontologies/interactioncontext#Product
+:Product rdf:type owl:Class ;
+         rdfs:comment "A class representing products or objects that may be associated with sensors, services, or user interactions."@en .
+
+
+###  http://ontologies/interactioncontext#Rating
+:Rating rdf:type owl:Class ;
+        rdfs:comment "A class representing ratings or evaluations provided by users or other entities to interactions, products, or services."@en .
+
+
+###  http://ontologies/interactioncontext#Rule
+:Rule rdf:type owl:Class ;
+      rdfs:subClassOf :Information .
+
+
+###  http://ontologies/interactioncontext#Sensor
+:Sensor rdf:type owl:Class ;
+        rdfs:comment "Description: A class representing sensors or sensor devices used to collect data within the interaction context."@en .
+
+
+###  http://ontologies/interactioncontext#Service
+:Service rdf:type owl:Class ;
+         rdfs:comment "A class representing services or functionalities provided by products or devices within."@en .
+
+
+###  http://ontologies/interactioncontext#Subservice
+:Subservice rdf:type owl:Class ;
+            rdfs:subClassOf :Service ;
+            rdfs:comment "A subclass of Service that represents subcomponents or subfunctionalities of larger services, allowing for hierarchical service modeling."@en .
+
+
+###  http://ontologies/interactioncontext#Time
+:Time rdf:type owl:Class ;
+      rdfs:subClassOf :Context .
+
+
+###  http://ontologies/interactioncontext#User
+:User rdf:type owl:Class ;
+      rdfs:comment "User"@en .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

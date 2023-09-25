@@ -1,0 +1,561 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://ontologies/interactioncontext#"
+     xml:base="http://ontologies/interactioncontext"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://ontologies/interactioncontext">
+        <owl:versionIRI rdf:resource="http://ontologies/interactioncontext"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://ontologies/interactioncontext#belongs_to -->
+
+
+    <owl:ObjectProperty rdf:about="http://ontologies/interactioncontext#belongs_to">
+        <owl:inverseOf rdf:resource="http://ontologies/interactioncontext#has_interactions"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://ontologies/interactioncontext#Interaction"/>
+        <rdfs:range rdf:resource="http://ontologies/interactioncontext#InteractionSequence"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies/interactioncontext#detects -->
+
+
+    <owl:ObjectProperty rdf:about="http://ontologies/interactioncontext#detects">
+        <rdfs:domain rdf:resource="http://ontologies/interactioncontext#Sensor"/>
+        <rdfs:range rdf:resource="http://ontologies/interactioncontext#Measure"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies/interactioncontext#executes -->
+
+
+    <owl:ObjectProperty rdf:about="http://ontologies/interactioncontext#executes">
+        <owl:inverseOf rdf:resource="http://ontologies/interactioncontext#is_executed_with"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://ontologies/interactioncontext#InteractionSequence"/>
+        <rdfs:range rdf:resource="http://ontologies/interactioncontext#Subservice"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies/interactioncontext#has_interactions -->
+
+
+    <owl:ObjectProperty rdf:about="http://ontologies/interactioncontext#has_interactions">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://ontologies/interactioncontext#InteractionSequence"/>
+        <rdfs:range rdf:resource="http://ontologies/interactioncontext#Interaction"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies/interactioncontext#has_role -->
+
+
+    <owl:ObjectProperty rdf:about="http://ontologies/interactioncontext#has_role">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://ontologies/interactioncontext#is_role_of"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://ontologies/interactioncontext#User"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies/interactioncontext#has_sensors -->
+
+
+    <owl:ObjectProperty rdf:about="http://ontologies/interactioncontext#has_sensors">
+        <rdfs:domain rdf:resource="http://ontologies/interactioncontext#Product"/>
+        <rdfs:range rdf:resource="http://ontologies/interactioncontext#Sensor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies/interactioncontext#has_services -->
+
+
+    <owl:ObjectProperty rdf:about="http://ontologies/interactioncontext#has_services">
+        <owl:inverseOf rdf:resource="http://ontologies/interactioncontext#is_service_of"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://ontologies/interactioncontext#Product"/>
+        <rdfs:range rdf:resource="http://ontologies/interactioncontext#Service"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies/interactioncontext#has_subservices -->
+
+
+    <owl:ObjectProperty rdf:about="http://ontologies/interactioncontext#has_subservices">
+        <owl:inverseOf rdf:resource="http://ontologies/interactioncontext#is_subservice_of"/>
+        <rdfs:domain rdf:resource="http://ontologies/interactioncontext#Service"/>
+        <rdfs:range rdf:resource="http://ontologies/interactioncontext#Subservice"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies/interactioncontext#has_tags -->
+
+
+    <owl:ObjectProperty rdf:about="http://ontologies/interactioncontext#has_tags">
+        <owl:inverseOf rdf:resource="http://ontologies/interactioncontext#is_tag_of"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://ontologies/interactioncontext#Service"/>
+                    <rdf:Description rdf:about="http://ontologies/interactioncontext#Subservice"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies/interactioncontext#is_executed_with -->
+
+
+    <owl:ObjectProperty rdf:about="http://ontologies/interactioncontext#is_executed_with">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://ontologies/interactioncontext#Subservice"/>
+        <rdfs:range rdf:resource="http://ontologies/interactioncontext#InteractionSequence"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies/interactioncontext#is_for_a -->
+
+
+    <owl:ObjectProperty rdf:about="http://ontologies/interactioncontext#is_for_a">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://ontologies/interactioncontext#Rating"/>
+        <rdfs:range rdf:resource="http://ontologies/interactioncontext#Subservice"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies/interactioncontext#is_from_a -->
+
+
+    <owl:ObjectProperty rdf:about="http://ontologies/interactioncontext#is_from_a">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://ontologies/interactioncontext#Rating"/>
+        <rdfs:range rdf:resource="http://ontologies/interactioncontext#User"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies/interactioncontext#is_made_by -->
+
+
+    <owl:ObjectProperty rdf:about="http://ontologies/interactioncontext#is_made_by">
+        <owl:inverseOf rdf:resource="http://ontologies/interactioncontext#makes"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://ontologies/interactioncontext#InteractionSequence"/>
+        <rdfs:range rdf:resource="http://ontologies/interactioncontext#User"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies/interactioncontext#is_role_of -->
+
+
+    <owl:ObjectProperty rdf:about="http://ontologies/interactioncontext#is_role_of">
+        <rdfs:range rdf:resource="http://ontologies/interactioncontext#User"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies/interactioncontext#is_service_of -->
+
+
+    <owl:ObjectProperty rdf:about="http://ontologies/interactioncontext#is_service_of">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://ontologies/interactioncontext#Service"/>
+        <rdfs:range rdf:resource="http://ontologies/interactioncontext#Product"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies/interactioncontext#is_subservice_of -->
+
+
+    <owl:ObjectProperty rdf:about="http://ontologies/interactioncontext#is_subservice_of">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://ontologies/interactioncontext#Subservice"/>
+        <rdfs:range rdf:resource="http://ontologies/interactioncontext#Service"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies/interactioncontext#is_tag_of -->
+
+
+    <owl:ObjectProperty rdf:about="http://ontologies/interactioncontext#is_tag_of">
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://ontologies/interactioncontext#Service"/>
+                    <rdf:Description rdf:about="http://ontologies/interactioncontext#Subservice"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies/interactioncontext#is_used_by -->
+
+
+    <owl:ObjectProperty rdf:about="http://ontologies/interactioncontext#is_used_by">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://ontologies/interactioncontext#uses"/>
+        <rdfs:domain rdf:resource="http://ontologies/interactioncontext#Subservice"/>
+        <rdfs:range rdf:resource="http://ontologies/interactioncontext#User"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies/interactioncontext#makes -->
+
+
+    <owl:ObjectProperty rdf:about="http://ontologies/interactioncontext#makes">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://ontologies/interactioncontext#User"/>
+        <rdfs:range rdf:resource="http://ontologies/interactioncontext#InteractionSequence"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies/interactioncontext#occurs_in -->
+
+
+    <owl:ObjectProperty rdf:about="http://ontologies/interactioncontext#occurs_in">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://ontologies/interactioncontext#InteractionSequence"/>
+        <rdfs:range rdf:resource="http://ontologies/interactioncontext#Context"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies/interactioncontext#uses -->
+
+
+    <owl:ObjectProperty rdf:about="http://ontologies/interactioncontext#uses">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://ontologies/interactioncontext#User"/>
+        <rdfs:range rdf:resource="http://ontologies/interactioncontext#Subservice"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://ontologies/interactioncontext#element -->
+
+
+    <owl:DatatypeProperty rdf:about="http://ontologies/interactioncontext#element">
+        <rdfs:domain rdf:resource="http://ontologies/interactioncontext#Interaction"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies/interactioncontext#endDate -->
+
+
+    <owl:DatatypeProperty rdf:about="http://ontologies/interactioncontext#endDate">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://ontologies/interactioncontext#Interaction"/>
+                    <rdf:Description rdf:about="http://ontologies/interactioncontext#InteractionSequence"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies/interactioncontext#id -->
+
+
+    <owl:DatatypeProperty rdf:about="http://ontologies/interactioncontext#id">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies/interactioncontext#name -->
+
+
+    <owl:DatatypeProperty rdf:about="http://ontologies/interactioncontext#name">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies/interactioncontext#order -->
+
+
+    <owl:DatatypeProperty rdf:about="http://ontologies/interactioncontext#order">
+        <rdfs:domain rdf:resource="http://ontologies/interactioncontext#Interaction"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies/interactioncontext#startDate -->
+
+
+    <owl:DatatypeProperty rdf:about="http://ontologies/interactioncontext#startDate">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://ontologies/interactioncontext#Interaction"/>
+                    <rdf:Description rdf:about="http://ontologies/interactioncontext#InteractionSequence"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies/interactioncontext#tag -->
+
+
+    <owl:DatatypeProperty rdf:about="http://ontologies/interactioncontext#tag">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies/interactioncontext#value -->
+
+
+    <owl:DatatypeProperty rdf:about="http://ontologies/interactioncontext#value"/>
+    
+
+
+    <!-- http://ontologies/interactioncontext#valueInteraction -->
+
+
+    <owl:DatatypeProperty rdf:about="http://ontologies/interactioncontext#valueInteraction">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://ontologies/interactioncontext#Interaction"/>
+                    <rdf:Description rdf:about="http://ontologies/interactioncontext#InteractionSequence"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies/interactioncontext#valueRating -->
+
+
+    <owl:DatatypeProperty rdf:about="http://ontologies/interactioncontext#valueRating"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://ontologies/interactioncontext#Context -->
+
+
+    <owl:Class rdf:about="http://ontologies/interactioncontext#Context">
+        <rdfs:comment xml:lang="en">The top-level class representing a contextual element, which can include devices, environments, identities, and time.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies/interactioncontext#Device -->
+
+
+    <owl:Class rdf:about="http://ontologies/interactioncontext#Device">
+        <rdfs:subClassOf rdf:resource="http://ontologies/interactioncontext#Context"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies/interactioncontext#Environment -->
+
+
+    <owl:Class rdf:about="http://ontologies/interactioncontext#Environment">
+        <rdfs:subClassOf rdf:resource="http://ontologies/interactioncontext#Context"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies/interactioncontext#Identity -->
+
+
+    <owl:Class rdf:about="http://ontologies/interactioncontext#Identity">
+        <rdfs:subClassOf rdf:resource="http://ontologies/interactioncontext#Context"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies/interactioncontext#Information -->
+
+
+    <owl:Class rdf:about="http://ontologies/interactioncontext#Information">
+        <rdfs:comment xml:lang="en">A class representing general information entities. Subclasses might include measures, rules, and other information-related concepts.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies/interactioncontext#Interaction -->
+
+
+    <owl:Class rdf:about="http://ontologies/interactioncontext#Interaction">
+        <rdfs:comment xml:lang="en">A class representing interactions between various entities in the context, capturing the dynamics of user-device, device-device, or user-environment interactions.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies/interactioncontext#InteractionSequence -->
+
+
+    <owl:Class rdf:about="http://ontologies/interactioncontext#InteractionSequence">
+        <rdfs:comment xml:lang="en">A class representing a sequence or series of interactions</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies/interactioncontext#Measure -->
+
+
+    <owl:Class rdf:about="http://ontologies/interactioncontext#Measure">
+        <rdfs:subClassOf rdf:resource="http://ontologies/interactioncontext#Information"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies/interactioncontext#Product -->
+
+
+    <owl:Class rdf:about="http://ontologies/interactioncontext#Product">
+        <rdfs:comment xml:lang="en">A class representing products or objects that may be associated with sensors, services, or user interactions.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies/interactioncontext#Rating -->
+
+
+    <owl:Class rdf:about="http://ontologies/interactioncontext#Rating">
+        <rdfs:comment xml:lang="en">A class representing ratings or evaluations provided by users or other entities to interactions, products, or services.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies/interactioncontext#Rule -->
+
+
+    <owl:Class rdf:about="http://ontologies/interactioncontext#Rule">
+        <rdfs:subClassOf rdf:resource="http://ontologies/interactioncontext#Information"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies/interactioncontext#Sensor -->
+
+
+    <owl:Class rdf:about="http://ontologies/interactioncontext#Sensor">
+        <rdfs:comment xml:lang="en">Description: A class representing sensors or sensor devices used to collect data within the interaction context.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies/interactioncontext#Service -->
+
+
+    <owl:Class rdf:about="http://ontologies/interactioncontext#Service">
+        <rdfs:comment xml:lang="en">A class representing services or functionalities provided by products or devices within.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies/interactioncontext#Subservice -->
+
+
+    <owl:Class rdf:about="http://ontologies/interactioncontext#Subservice">
+        <rdfs:subClassOf rdf:resource="http://ontologies/interactioncontext#Service"/>
+        <rdfs:comment xml:lang="en">A subclass of Service that represents subcomponents or subfunctionalities of larger services, allowing for hierarchical service modeling.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies/interactioncontext#Time -->
+
+
+    <owl:Class rdf:about="http://ontologies/interactioncontext#Time">
+        <rdfs:subClassOf rdf:resource="http://ontologies/interactioncontext#Context"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies/interactioncontext#User -->
+
+
+    <owl:Class rdf:about="http://ontologies/interactioncontext#User">
+        <rdfs:comment xml:lang="en">User</rdfs:comment>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+
