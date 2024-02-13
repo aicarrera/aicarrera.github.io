@@ -85,7 +85,39 @@ environment. This ontology is expressed in RDF/XML format and follows the OWL (W
 <!--INTRODUCTION SECTION-->
     <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <span class="markdown">
-This is a place holder text for the introduction. The introduction should briefly describe the ontology, its motivation, state of the art and goals.</span>
+The resulting ontology, Service Interaction Context Ontology (SICO) was created in Protégé. To  represent the components of the ontology, we divided the entities into three groups: S-PSS, Context, and Interaction.
+<ul>
+<li>S-PSS: In an S-PSS, a static model is necessary to represent the services of smart devices.
+In accordance with Maleki et al. (2018a), each service is modeled into a pattern that relates
+the service with the product and required information. Services may be grouped into related
+sub-services. A sub-service represents a specific function of the e-service platform or smart
+device, requiring information in the form of rules, measures, and parameters. The product
+itself is closely related to the physical components that need to integrate sensors in the solution.</li>
+
+<li>CONTEXT: The second group further extends the framework ontology model to incor-
+porate context-specific entities and relationships. The ontology encompasses four major sources
+of contextual information: device, user/identity, environment, and time (Iqbal et al., 2021).
+Device context will refer to information relevant to the status and particular properties of the
+SCP. The user identity context can encompass demographic details such as age-group, location,
+education level, reflecting the type of an individual or a user group. The environmental and
+time context will refer to the surrounding conditions and temporal aspects influencing the SCP
+or user interaction. This includes factors such as ambient conditions, time of day, and other
+situational variables that contribute to an understanding of the overall context in which the
+device or user operates. Because contextual data is dynamic, it needs to be created as instances or individuals derived from these types for each particular implementation of the framework.</li>
+
+<li>INTERACTION: In the last group, following a bottom-up approach, we analyzed a dataset
+from collected user interactions (Carrera-Rivera et al., 2023), to define the entities and their
+relationships with the services and contextual data within the ontology. Interaction sequences
+represent an ordered set of individual interactions performed by users within the system and are
+linked to a specific service or sub-service. Interactions can take various forms (i.e. click, scroll,
+hover) and have the ability to trigger events. To enhance the understanding and analysis of
+these events, it was crucial to name them appropriately. Once these elements were incorporated
+into the ontology, a comprehensive representation of user interactions and their connections to
+the system behavior and functionality was achieved. </li>
+
+</ul>
+	
+</span>
 <div id="namespacedeclarations">
 <h3 id="ns" class="list">Namespace declarations</h3>
 <div id="ns" align="center">
